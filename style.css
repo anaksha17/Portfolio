@@ -1,0 +1,113 @@
+/* Custom styles for a professional and creative portfolio */
+:root {
+  --primary: #6B46C1; /* Neon purple */
+  --accent: #60A5FA; /* Neon blue */
+}
+
+body {
+  scroll-behavior: smooth;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.project-card:hover .custom-cursor {
+  background: url('https://via.placeholder.com/16?text=+') center/cover no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+/* Animated Background for Home Section */
+#home {
+  background-image: url('https://images.unsplash.com/photo-1616718424222-23a4a4a6c6f4');
+  background-size: cover;
+  background-position: center;
+  animation: zoomBackground 20s infinite;
+}
+
+@keyframes zoomBackground {
+  0% { background-size: 100%; }
+  50% { background-size: 110%; }
+  100% { background-size: 100%; }
+}
+
+/* Fade-in Animation */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide-up Animation */
+.animate-slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing Animation for Bio */
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Project Card Hover Effect */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.05) rotateY(5deg);
+}
+
+/* Button Bounce Effect */
+.bounce-btn {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .project-card, .skill-card {
+    padding: 1rem;
+  }
+}
